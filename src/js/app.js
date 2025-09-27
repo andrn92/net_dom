@@ -6,10 +6,10 @@ class Game {
   }
 
   drawBoard() {
-    const board = document.querySelector('.board');
+    const board = document.querySelector(".board");
     for (let i = 0; i < this.boardSize; i += 1) {
-      const item = document.createElement('div');
-      item.className = 'cell';
+      const item = document.createElement("div");
+      item.className = "cell";
       item.id = `cell${i}`;
       board.append(item);
     }
@@ -23,10 +23,14 @@ class Game {
         this.currentIndexCell = Math.floor(Math.random() * this.boardSize);
       } while (this.currentIndexCell === this.previousIndexCell);
 
-      const previousCell = document.getElementById(`cell${this.previousIndexCell}`);
-      previousCell.innerHTML = '';
+      const previousCell = document.getElementById(
+        `cell${this.previousIndexCell}`,
+      );
+      previousCell.innerHTML = "";
 
-      const currentCell = document.getElementById(`cell${this.currentIndexCell}`);
+      const currentCell = document.getElementById(
+        `cell${this.currentIndexCell}`,
+      );
       currentCell.innerHTML = '<img src = "./img/goblin.png">';
       this.previousIndexCell = this.currentIndexCell;
     }, 900);

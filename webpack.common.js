@@ -32,23 +32,22 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: 'img/[name].[ext]',
-        }
+          name: "img/[name].[ext]",
+        },
       },
       {
         test: /\.ico$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[name].[ext]',
-        }
+          name: "[name].[ext]",
+        },
       },
     ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      filename: "./src/favicon.ico",
       template: "./src/index.html",
       filename: "./index.html",
     }),
